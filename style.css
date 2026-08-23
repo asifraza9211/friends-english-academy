@@ -1,0 +1,1022 @@
+/* =========================================
+   FRIENDS' ENGLISH ACADEMY
+   STYLE.CSS
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --navy: #071d41;
+    --dark-navy: #03132d;
+    --red: #e52b2b;
+    --red-dark: #c91e1e;
+    --white: #ffffff;
+    --light: #f5f7fb;
+    --text: #172033;
+    --gray: #667085;
+    --border: #e5e7eb;
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.top-bar {
+    min-height: 40px;
+    padding: 8px 5%;
+    background: var(--dark-navy);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 13px;
+}
+
+.top-bar .left,
+.top-bar .right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar i {
+    color: #ff3838;
+    margin-right: 6px;
+}
+
+.top-bar .right a:last-child i {
+    color: #25d366;
+}
+
+.top-bar a {
+    transition: 0.3s;
+}
+
+.top-bar a:hover {
+    color: #ff3b3b;
+}
+
+/* =========================================
+   HEADER / NAVBAR
+   ========================================= */
+
+header {
+    width: 100%;
+    min-height: 92px;
+    padding: 12px 5%;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Logo */
+
+.logo {
+    line-height: 1;
+}
+
+.logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+}
+
+.logo h2 span {
+    color: var(--red);
+}
+
+.logo p {
+    margin-top: 5px;
+    font-size: 9px;
+    color: #555;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: #172033;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+
+    background: var(--red);
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--red);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Main Button */
+
+.btn,
+.join {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border-radius: 7px;
+
+    background: var(--red);
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 20px rgba(229, 43, 43, 0.25);
+}
+
+.btn:hover,
+.join:hover {
+    background: var(--red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(229, 43, 43, 0.35);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 550px;
+    padding: 60px 5%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 45px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(229, 43, 43, 0.06),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #ffffff, #f4f7fb);
+}
+
+/* Hero Content */
+
+.content h4 {
+    color: var(--red);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.content h1 {
+    color: var(--navy);
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.08;
+    font-weight: 800;
+}
+
+.content h1 span {
+    color: var(--red);
+}
+
+.content > p {
+    margin-top: 20px;
+
+    font-size: 18px;
+    color: #344054;
+
+    max-width: 600px;
+}
+
+/* Features */
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 28px;
+}
+
+.features div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.features i {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--navy);
+    color: white;
+}
+
+.features div:nth-child(2) i,
+.features div:nth-child(4) i {
+    background: var(--red);
+}
+
+/* Hero Buttons */
+
+.buttons {
+    display: flex;
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.demo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 28px;
+
+    border: 1px solid var(--navy);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--navy);
+
+    transition: 0.3s;
+}
+
+.demo:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Hero Image */
+
+.image {
+    position: relative;
+}
+
+.image::before {
+    content: "";
+
+    width: 180px;
+    height: 180px;
+
+    background: rgba(229, 43, 43, 0.10);
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: -35px;
+    right: -25px;
+
+    z-index: 0;
+}
+
+.image img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    position: relative;
+    z-index: 1;
+
+    box-shadow: 0 25px 55px rgba(7, 29, 65, 0.20);
+}
+
+/* =========================================
+   STATS
+   ========================================= */
+
+.stats {
+    padding: 25px 5%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    background: #f7f9fc;
+}
+
+.stats .box {
+    padding: 22px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+.stats .box:hover {
+    transform: translateY(-6px);
+}
+
+.stats h2 {
+    color: var(--red);
+    font-size: 30px;
+}
+
+.stats p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+/* =========================================
+   WHY CHOOSE US
+   ========================================= */
+
+.why {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.why > h2 {
+    color: var(--navy);
+    font-size: 34px;
+    margin-bottom: 45px;
+}
+
+.why > h2::after {
+    content: "";
+    width: 55px;
+    height: 4px;
+
+    display: block;
+
+    background: var(--red);
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    padding: 35px 25px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(229, 43, 43, 0.35);
+    box-shadow: var(--shadow);
+}
+
+.card i {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    background: #fff0f0;
+    color: var(--red);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.card h3 {
+    margin: 18px 0 8px;
+    color: var(--navy);
+    font-size: 18px;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CTA
+   ========================================= */
+
+.cta {
+    margin: 20px 5% 70px;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            #0b315e
+        );
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "";
+
+    width: 300px;
+    height: 300px;
+
+    border: 50px solid rgba(255,255,255,0.05);
+
+    border-radius: 50%;
+
+    position: absolute;
+    right: -100px;
+    top: -120px;
+}
+
+.cta h2 {
+    font-size: 35px;
+    position: relative;
+}
+
+.cta p {
+    margin: 12px 0 25px;
+    color: #dce5f2;
+    position: relative;
+}
+
+.cta .btn {
+    position: relative;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    nav ul {
+        gap: 16px;
+    }
+
+    .hero {
+        gap: 25px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .top-bar {
+        padding: 8px 4%;
+    }
+
+    header {
+        padding: 15px 4%;
+    }
+
+    header .btn {
+        display: none;
+    }
+
+    nav ul {
+        gap: 13px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .image img {
+        height: 380px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .top-bar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .top-bar .left,
+    .top-bar .right {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header {
+        min-height: 75px;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .logo p {
+        font-size: 6px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 45px 5%;
+    }
+
+    .content h4 {
+        font-size: 13px;
+    }
+
+    .content h1 {
+        font-size: 39px;
+    }
+
+    .content > p {
+        font-size: 14px;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .features div {
+        font-size: 11px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .join,
+    .demo {
+        width: 100%;
+    }
+
+    .image img {
+        height: 300px;
+        border-radius: 15px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px 5%;
+        gap: 10px;
+    }
+
+    .stats .box {
+        padding: 17px 8px;
+    }
+
+    .stats h2 {
+        font-size: 24px;
+    }
+
+    .stats p {
+        font-size: 11px;
+    }
+
+    .why {
+        padding: 55px 5%;
+    }
+
+    .why > h2 {
+        font-size: 26px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        margin: 10px 5% 45px;
+        padding: 50px 20px;
+    }
+
+    .cta h2 {
+        font-size: 27px;
+    }
+
+    .cta p {
+        font-size: 13px;
+    }
+}
+
+/* =========================================
+   EXTRA ANIMATIONS
+   ========================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    animation: fadeUp 0.8s ease;
+}
+
+.image {
+    animation: fadeUp 1s ease;
+}
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+    background: var(--red);
+    color: white;
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--red);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--red-dark);
+}
+
+/* =========================================
+   DEMO CLASS FORM
+========================================= */
+
+.demo-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #f7f9fc;
+}
+
+
+.demo-box {
+    width: min(100%, 1050px);
+    margin: auto;
+
+    background: #ffffff;
+
+    padding: 45px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Heading */
+
+.demo-heading {
+    margin-bottom: 30px;
+}
+
+.demo-heading h2 {
+    margin: 0 0 8px;
+
+    color: #071a49;
+
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.demo-heading p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 16px;
+}
+
+
+/* Two Column Layout */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* Form Group */
+
+.form-group {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #071a49;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* Input + Select + Textarea */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9dee8;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 15px 16px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #222;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.form-group input,
+.form-group select {
+    height: 52px;
+}
+
+
+.form-group textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #e53935;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 57, 53, 0.10);
+}
+
+
+/* Message */
+
+.message-group {
+    margin-top: 24px;
+}
+
+
+/* WhatsApp Button */
+
+.demo-whatsapp-btn {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 17px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e53935,
+            #c91f2b
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.demo-whatsapp-btn i {
+    margin-right: 8px;
+
+    font-size: 18px;
+}
+
+
+.demo-whatsapp-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(229, 57, 53, 0.25);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .demo-section {
+        padding: 50px 15px;
+    }
+
+    .demo-box {
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+
+    .demo-heading h2 {
+        font-size: 28px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .message-group {
+        margin-top: 20px;
+    }
+
+}
